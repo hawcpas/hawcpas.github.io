@@ -27,28 +27,32 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1642a4; outline-offs
   pointer-events: none;
 }
 .notice::before {
+  inset: -16%;
   background:
-    radial-gradient(ellipse 46% 84% at 7% 66%, #365dd51c, transparent 92%),
-    radial-gradient(ellipse 35% 78% at 97% 35%, #54afe824, transparent 95%);
-  opacity: .85;
+    radial-gradient(ellipse 33% 70% at 20% 72%, #426de55e, transparent 96%),
+    radial-gradient(ellipse 30% 66% at 80% 30%, #4daae854, transparent 98%);
+  opacity: .8;
 }
 .notice::after {
-  background: radial-gradient(circle, #5777b561 1px, transparent 1.25px) center / 10px 10px;
+  background: radial-gradient(circle, #365eac9c 1.1px, transparent 1.5px) center / 11px 11px;
   mask-image:
-    radial-gradient(ellipse 40% 62% at 4% 78%, #000a, transparent 92%),
-    radial-gradient(ellipse 30% 65% at 96% 26%, #0008, transparent 96%);
+    radial-gradient(ellipse 34% 70% at 22% 62%, black 8%, transparent 90%),
+    radial-gradient(ellipse 25% 65% at 82% 44%, #000c, transparent 95%);
+  mask-size: 148% 125%;
+  mask-position: center;
+  mask-repeat: no-repeat;
 }
 @media (prefers-reduced-motion: no-preference) {
-  .notice::before { animation: notice-glow 14s ease-in-out infinite alternate; }
-  .notice::after { animation: notice-dots 14s ease-in-out infinite alternate; }
+  .notice::before { animation: notice-glow 4.8s ease-in-out -1.2s infinite alternate; }
+  .notice::after { animation: notice-dots 4.8s ease-in-out -1.2s infinite alternate; }
 }
 @keyframes notice-glow {
-  from { opacity: .52; transform: scale(1); }
-  to { opacity: .98; transform: scale(1.1); }
+  from { opacity: .5; transform: translate(-6%, 6%); }
+  to { opacity: 1; transform: translate(6%, -6%); }
 }
 @keyframes notice-dots {
-  from { opacity: .58; }
-  to { opacity: .94; }
+  from { opacity: .48; mask-position: 85% 68%; }
+  to { opacity: .95; mask-position: 15% 32%; }
 }
 h1 { max-width: 39ch; margin: 0 auto; font-size: clamp(2rem, 1.5rem + 1.7vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -.04em; text-wrap: balance; }
 .subhead { margin: 14px 0 0; color: var(--gray); font-size: clamp(1.125rem, 1rem + .55vw, 1.5rem); line-height: 1.4; letter-spacing: -.018em; text-wrap: balance; }
