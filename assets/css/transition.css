@@ -19,7 +19,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1642a4; outline-offs
 .directory-link { display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; border-radius: 6px; background: var(--ink); color: white; font-size: 14px; }
 .directory-link:hover { background: #393936; }
 .notice { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(64px, 5.4vw, 100px) clamp(62px, 6vw, 110px); text-align: center; }
-.notice::before, .notice::after, .notice .shell::before {
+.notice::before, .notice::after, .notice .shell::before, .notice .shell::after {
   content: "";
   position: absolute;
   z-index: -1;
@@ -27,6 +27,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1642a4; outline-offs
 }
 /* Two overlapping pools of light travel on different paths. */
 .notice::before, .notice::after {
+  z-index: -3;
   inset: -30% -14%;
 }
 .notice::before {
@@ -36,15 +37,29 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1642a4; outline-offs
   background: radial-gradient(ellipse 34% 60% at 80% 46%, #4bade85c, #94ceec26 55%, transparent 92%);
 }
 .notice .shell::before {
+  z-index: -2;
   inset: 0;
   background: radial-gradient(circle, #3862a95e 1px, transparent 1.4px) center / 11px 11px;
   mask-image:
     radial-gradient(ellipse 40% 79% at 8% 67%, #000b, transparent 95%),
     radial-gradient(ellipse 35% 72% at 96% 32%, #0009, transparent 98%);
 }
+/* Let the light dissolve into the white header and directory. */
+.notice .shell::after {
+  inset: 0;
+  background: linear-gradient(to bottom, white, transparent 24%, transparent 72%, white);
+}
 @media (prefers-reduced-motion: no-preference) {
+  .firm { transition: background-color 160ms ease; }
+  .firm .arrow { transition: transform 160ms ease; }
+  .directory-dialog[open] { animation: directory-fade 180ms ease-out both; }
+  .directory-dialog[open]::backdrop { animation: directory-fade 180ms ease-out both; }
   .notice::before { animation: blue-drift 9s ease-in-out -1.4s infinite; }
   .notice::after { animation: daylight-drift 13s ease-in-out -3s infinite; }
+}
+@keyframes directory-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 @keyframes blue-drift {
   0%, 100% { transform: translate(-5%, 5%) rotate(-4deg); }
@@ -67,6 +82,15 @@ h2 { margin: 0; font-size: clamp(1.5rem, 1.25rem + .65vw, 1.875rem); font-weight
 .directory-intro p { margin: 6px 0 0; color: var(--gray); font-size: 1.0625rem; line-height: 1.45; }
 .practices { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); background: #f2f0ec; border-radius: 12px; }
 .firm { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-content: center; align-items: center; gap: 8px 12px; min-height: 124px; padding: 24px clamp(16px, 2vw, 32px); }
+.firm:first-child { border-radius: 12px 0 0 12px; }
+.firm:last-child { border-radius: 0 12px 12px 0; }
+.firm:is(:active, :focus-visible) { background: #e1e7f3; }
+@media (hover: hover) {
+  .firm:hover { background: #e8ebf2; }
+}
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .firm:hover .arrow { transform: translate(2px, -2px); }
+}
 .firm + .firm { border-left: 1px solid #d6d3cd; }
 .firm-name { font-size: clamp(1.1875rem, 1rem + .85vw, 1.75rem); font-weight: 400; line-height: 1.12; letter-spacing: -.025em; }
 .domain { grid-column: 1; color: #595853; font-size: 15px; }
