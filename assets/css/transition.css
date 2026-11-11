@@ -3,6 +3,7 @@
   --ink: #191919;
   --gray: #676664;
   --logo-blue: #072d9a;
+  --hardaway-lavender: #ab88d9;
   color: var(--ink);
   background: white;
   font-family: "Inter", Arial, Helvetica, sans-serif;
@@ -31,10 +32,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1642a4; outline-offs
   inset: -30% -14%;
 }
 .notice::before {
-  background: radial-gradient(ellipse 38% 62% at 22% 62%, #406ee360, #7797eb29 52%, transparent 90%);
+  background: radial-gradient(ellipse 33% 62% at 19% 62%, color-mix(in srgb, var(--hardaway-lavender) 44%, transparent), color-mix(in srgb, var(--hardaway-lavender) 18%, transparent) 52%, transparent 90%);
 }
 .notice::after {
-  background: radial-gradient(ellipse 34% 60% at 80% 46%, #4bade85c, #94ceec26 55%, transparent 92%);
+  background: radial-gradient(ellipse 31% 60% at 83% 46%, color-mix(in srgb, var(--logo-blue) 27%, transparent), color-mix(in srgb, var(--logo-blue) 10%, transparent) 55%, transparent 92%);
 }
 .notice .shell::before {
   z-index: -2;
