@@ -19,40 +19,42 @@ a:focus-visible, button:focus-visible { outline: 3px solid #1642a4; outline-offs
 .directory-link { display: inline-flex; align-items: center; gap: 9px; padding: 10px 15px; border-radius: 6px; background: var(--ink); color: white; font-size: 14px; }
 .directory-link:hover { background: #393936; }
 .notice { position: relative; isolation: isolate; overflow: hidden; padding-block: clamp(64px, 5.4vw, 100px) clamp(62px, 6vw, 110px); text-align: center; }
-.notice::before, .notice::after {
+.notice::before, .notice::after, .notice .shell::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 0;
   pointer-events: none;
 }
+/* Two overlapping pools of light travel on different paths. */
+.notice::before, .notice::after {
+  inset: -30% -14%;
+}
 .notice::before {
-  inset: -16%;
-  background:
-    radial-gradient(ellipse 33% 70% at 20% 72%, #426de55e, transparent 96%),
-    radial-gradient(ellipse 30% 66% at 80% 30%, #4daae854, transparent 98%);
-  opacity: .8;
+  background: radial-gradient(ellipse 38% 62% at 22% 62%, #406ee360, #7797eb29 52%, transparent 90%);
 }
 .notice::after {
-  background: radial-gradient(circle, #365eac9c 1.1px, transparent 1.5px) center / 11px 11px;
+  background: radial-gradient(ellipse 34% 60% at 80% 46%, #4bade85c, #94ceec26 55%, transparent 92%);
+}
+.notice .shell::before {
+  inset: 0;
+  background: radial-gradient(circle, #3862a95e 1px, transparent 1.4px) center / 11px 11px;
   mask-image:
-    radial-gradient(ellipse 34% 70% at 22% 62%, black 8%, transparent 90%),
-    radial-gradient(ellipse 25% 65% at 82% 44%, #000c, transparent 95%);
-  mask-size: 148% 125%;
-  mask-position: center;
-  mask-repeat: no-repeat;
+    radial-gradient(ellipse 40% 79% at 8% 67%, #000b, transparent 95%),
+    radial-gradient(ellipse 35% 72% at 96% 32%, #0009, transparent 98%);
 }
 @media (prefers-reduced-motion: no-preference) {
-  .notice::before { animation: notice-glow 4.8s ease-in-out -1.2s infinite alternate; }
-  .notice::after { animation: notice-dots 4.8s ease-in-out -1.2s infinite alternate; }
+  .notice::before { animation: blue-drift 9s ease-in-out -1.4s infinite; }
+  .notice::after { animation: daylight-drift 13s ease-in-out -3s infinite; }
 }
-@keyframes notice-glow {
-  from { opacity: .5; transform: translate(-6%, 6%); }
-  to { opacity: 1; transform: translate(6%, -6%); }
+@keyframes blue-drift {
+  0%, 100% { transform: translate(-5%, 5%) rotate(-4deg); }
+  37% { transform: translate(5%, -7%) rotate(4deg) scale(1.08); }
+  72% { transform: translate(1%, -10%) rotate(-2deg); }
 }
-@keyframes notice-dots {
-  from { opacity: .48; mask-position: 85% 68%; }
-  to { opacity: .95; mask-position: 15% 32%; }
+@keyframes daylight-drift {
+  0%, 100% { transform: translate(4%, -5%) rotate(3deg); }
+  41% { transform: translate(-6%, 7%) rotate(-5deg); }
+  76% { transform: translate(1%, 10%) rotate(1deg) scale(1.07); }
 }
 h1 { max-width: 39ch; margin: 0 auto; font-size: clamp(2rem, 1.5rem + 1.7vw, 3rem); font-weight: 400; line-height: 1.1; letter-spacing: -.04em; text-wrap: balance; }
 .subhead { margin: 14px 0 0; color: var(--gray); font-size: clamp(1.125rem, 1rem + .55vw, 1.5rem); line-height: 1.4; letter-spacing: -.018em; text-wrap: balance; }
