@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 236 70" role="img" aria-labelledby="name">
+  <title id="name">Donald R. Hardaway, Jr. — Certified Public Accountants</title>
+  <g fill="#5937A0">
+    <path d="M1 1h1.35v68H1z M6 5h1.35v54H6z"/>
+    <g font-family="Candara, Optima, Arial, sans-serif">
+      <text x="12" y="16" font-size="19.5" font-weight="600" textLength="220" lengthAdjust="spacingAndGlyphs">DONALD R. HARDAWAY, JR.</text>
+      <text x="12" y="35" font-size="12.8" font-weight="600" textLength="190" lengthAdjust="spacingAndGlyphs">CERTIFIED PUBLIC ACCOUNTANTS</text>
+    </g>
+  </g>
+</svg>
