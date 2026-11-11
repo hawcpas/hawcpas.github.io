@@ -1,101 +1,53 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<title>Hardaway Axume & Weir CPAs</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="shortcut icon" type="x-icon" href="images/HAW.png">
-		
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<style>
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-		</style>
-	</head>
-	<body class="is-preload">
-		<!-- Wrapper -->
-			<div id="wrapper">
-
-				<!-- Header -->
-					<header id="header">
-						<div class="inner">
-						
-						<!-- Logo -->
-								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/HAW.png" alt="" /></span><span class="title">Hardaway Axume & Weir, CPAs</span>
-								</a>
-
-							<!-- Nav -->
-								<nav>
-									<ul>
-										<li><a href="#menu">Menu</a></li>
-									</ul>
-								</nav>
-
-						</div>
-					</header>
-					
-				<!-- Menu -->
-					<nav id="menu">
-						<h2>Menu</h2>
-						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="https://hardaway-cpa.com/">Donald R. Hardaway Jr. CPA</a></li>
-							<li><a href="https://www.axumecpas.com/">Axume & Associates CPAs</a></li>
-
-						</ul>
-					</nav>
-					
-					<!-- Main -->
-					<div id="main">
-						<div class="inner">
-							<header>
-							<div style="text-align:center">
-								<h2>The Firm of</h2>
-								<h1>Hardaway Axume Weir CPAs, LLP</h1>
-								<h2>has dissolved as of January 1, 2025.</h2><br />
-								<h2>The owners have opened two new firms;<h2>
-								<h1><a href="https://hardaway-cpa.com/" style="color: #1565B3;">Donald R. Hardaway Jr. CPA</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    <a href="https://www.axumecpas.com/" style="color: #1565B3;">Axume & Associates CPAs</a></h1>
-								<h2>Click on the respective firm name to be redirected to their webpage.</h2>
-							</div>
-								
-							</header>
-							<!--
-							<div class="container">
-							<section class="tiles">
-								<article class="style8">
-									<span class="image">
-										<img src="images/pic08.jpg" alt="" />
-									</span>
-									<a href="">
-										<h2>Donald R. Hardaway Jr. CPA</h2>
-									</a>
-								</article>
-								<article class="style15">
-									<span class="image">
-										<img src="images/pic15.jpg" alt="" />
-									</span>
-									<a href="https://www.axumecpas.com/">
-										<h2>Axume & Associates, CPAs</h2>
-									</a>
-								</article>
-							</section>
-							</div>
-							-->
-						</div>
-					</div>
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A transition notice for clients of Hardaway Axume Weir CPAs, LLP, with links to Donald R. Hardaway Jr. CPA and Axume CPAs &amp; Advisors.">
+  <title>Firm update | Hardaway Axume Weir CPAs, LLP</title>
+  <link rel="icon" type="image/png" href="images/HAW.png">
+  <link rel="stylesheet" href="assets/css/transition.css">
+</head>
+<body id="top">
+  <header class="masthead">
+    <div class="shell masthead-inner">
+      <a class="brand" href="#top"><img src="images/haw-logo.svg" width="1123" height="248" alt="Hardaway Axume Weir CPAs, LLP — Accounting, Tax, Bookkeeping &amp; Payroll Services"></a>
+      <a class="directory-link" href="#firms">Firm directory <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+  <main>
+    <section class="notice" aria-labelledby="notice-title">
+      <div class="shell">
+        <h1 id="notice-title"><span class="firm-title">Hardaway Axume Weir CPAs, LLP</span> dissolved on <time datetime="2025-01-01">January 1, 2025</time>.</h1>
+        <p class="subhead">The owners have opened two independent firms.</p>
+        <a class="primary" href="#firms">Find your firm <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="directory shell" id="firms" aria-labelledby="directory-title">
+      <div class="directory-intro">
+        <h2 id="directory-title">Firm directory.</h2>
+        <p>Select a practice to visit its website.</p>
+      </div>
+      <div class="practices">
+        <a class="firm" href="https://hardaway-cpa.com/">
+          <span class="firm-name">Donald R. Hardaway Jr. CPA</span>
+          <span class="domain">hardaway-cpa.com</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="firm" href="https://www.axumecpas.com/">
+          <span class="firm-name">Axume CPAs &amp; Advisors</span>
+          <span class="domain">axumecpas.com</span>
+          <span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+  </main>
+  <dialog class="directory-dialog" aria-labelledby="picker-title">
+    <div class="dialog-heading">
+      <h2 id="picker-title">Choose your firm</h2>
+      <form method="dialog"><button autofocus aria-label="Close firm directory">×</button></form>
+    </div>
+  </dialog>
+  <script src="assets/js/directory.js" defer></script>
+</body>
 </html>
